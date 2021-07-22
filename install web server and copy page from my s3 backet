@@ -1,0 +1,13 @@
+#install web server and copy page from my s3 backet
+
+#!/bin/bash  
+Echo "-------------------------------START-------------------------------"  
+yum -y update 
+yum -y install httpd  
+aws s3 sync s3://backet name /var/www/html 
+service httpd start  
+chkconfig on  
+echo  "------------------------------FINISH------------------------------" 
+
+
+#  less cloud-init-output.log лог введених команд 
